@@ -14,5 +14,6 @@ Step 2: Polygenic Risk Generation
     2. ELastic Net
 
 Step 3: Validation with Test Data
+    
     1. ROC calculation
   
