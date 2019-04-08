@@ -34,8 +34,10 @@ elastic_net_model=function(xtrain,ytrain,xtest){
                                trControl = cctrl1,metric = "ROC",
                                tuneGrid = expand.grid(alpha = seq(0.00001,0.2,by = 0.02),
                                                       lambda = seq(0.00001,0.16,by = 0.03)))
-     save(test_class_cv_model,file='elastic.RData')
-     plot(test_class_cv_model)
+    save(test_class_cv_model,file='elastic.RData')
+    pdf('model.pdf')
+    plot(test_class_cv_model)
+    dev.off()
   #validation of the model
     coeff=coef(test_class_cv_model$finalModel,test_class_cv_model$bestTune$lambda ) 
   #polygenic score on validation data
